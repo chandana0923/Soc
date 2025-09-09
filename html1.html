@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Summary & Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dde4de;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #69aac9;
+            padding: 32px;
+            border-radius: 100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .summary {
+            margin-bottom: 30px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #130101;
+        }
+        .summary h2 {
+            margin-top: 0;
+            color: #230202;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            background-color: rgb(77, 102, 145);
+        }
+        .card {
+            background: #cff36b;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            padding: 20px;
+            flex: 1 2 3 130px;
+            min-width: 130px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #252826;
+        }
+        .card p {
+            margin-bottom: 0;
+            color: #555;
+        }
+        @media (max-width: 700px) {
+            .cards {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                Experienced Full Stack Developer with a strong background in designing, developing, and deploying scalable web applications. Skilled in modern frontend and backend technologies, with a passion for delivering high-quality solutions and collaborating in agile teams.
+            </p>
+        </div>
+        
+        <h2>Education</h2>
+        <p>all the educational details </p>
+        <div>
+            <h2>Projects</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>TaskTracker Pro</h3>
+                    <p>
+                        A task management app with real-time updates using Vue.js and Flask.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>ShopEase</h3>
+                    <p>
+                       Scalable e-commerce site with secure payments built on Django REST
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>MyCreativeSpace</h3>
+                    <p>
+                        Responsive portfolio website optimized for SEO and accessibility.
+                </div>
+                <div class="card">
+                    <h3>FitTrack</h3>
+                    <p>
+                        Cross-platform fitness app with workout logging and goal tracking using React Native and Firebase.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <span>Vibe Coder</span>
+</body>
+</html

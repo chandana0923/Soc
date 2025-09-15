@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List - Only Add If All Completed</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .btn-complete {
+            margin-left: 8px;
+            padding: 3px 7px;
+            font-size: 12px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Task List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskBtn">Add Task</button>
+    <p id="warning" style="color: red; display:none;">Please complete all tasks before adding new ones.</p>
+    <ul id="taskList"></ul>
+
+    <script>
+    $(document).ready(function() {
+        function allTasksCompleted() {
+            return $('#taskList li').length === $('#taskList li.completed').length;
+        }
+
+        $('#addTaskBtn').click(function() {
+            if (!allTasksCompleted() && $('#taskList li').length > 0) {
+                $('#warning').show();
+                return;
+            } else {
+                $('#warning').hide();
+            }
+
+            var task = $('#taskInput').val().trim();
+            if (task) {
+                var safeTask = $('<div>').text(task).html();
+                var $li = $('<li></li>').html(safeTask);
+
+                var $completeBtn = $('<button class="btn-complete">Complete</button>');
+
+                $completeBtn.click(function() {
+                    $li.toggleClass('completed');
+                });
+
+                $li.append($completeBtn);
+                $('#taskList').append($li);
+
+                $('#taskInput').val('');
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>

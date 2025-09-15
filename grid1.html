@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px 12px;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        button {
+            padding: 10px 24px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center;">Student Registration Form</h2>
+        <form>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="course selection">Course Selection:</label>
+            <input></input>
+            <input type="radio" id="course selection" name="course selection" value="JavaScript">JavaScript </button>
+            <input type="radio" id="course selection" name="course selection" value="Python">Python</button>
+            <input type="radio" id="course selection" name="course selection" value="html">html</button>
+
+
+            <label for="gender">Gender:</label>
+            <input></input>
+            <input type="radio" id="male" name="gender" value="Male">Male</button>
+           
+            <input type="radio" id="female" name="gender" value="Female">Female</button>
+                
+            </select>
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required>
+
+            <label for="confirm password">Confirm password:</label>
+            <input type="text" id="confirm password" name="confirm password" required pattern="[0-9]{10}" placeholder="10-digit number">
+
+            <div class="full-width">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

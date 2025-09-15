@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectWeather</title>
+    <link rel="stylesheet" href="styleS.css">
+    
+</head>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>;
+</head>
+<body>
+  <h2>Hello jQuery</h2>
+  <h3>just for timepass</h3>
+  <button id="btn">Click Me</button>
+    <div class="temp">
+        <p>this is a different division
+            on which we are using the class tags using jquery
+        </p>
+    </div>
+    <input type="text" id="myInput">
+<p id="output">Hi this text</p>
+<ul id="list"> +-
+    +
+  <li>Item 1</li>
+</ul>
+<button id="add">Add Item</button>
+<button id="addf">Add Item first</button>
+<button id="remove">Remove Last</button>
+<button id="removeall">Remove All</button>
+
+
+  <script>
+    $(document).ready(function(){
+      $("#btn").click(function(){
+        $("h2").text("Button Clicked!");
+        $("h3").text("Button Clicked! Duplicate");
+        $(".temp").css("background-color", "yellow");
+        $("p").css("font-weight", "bold");
+      });
+
+
+
+    $("#add").click(function(){
+      $("#list").append("<li>New Item appended from script</li>");
+    });
+    $("#addf").click(function(){
+      $("#list").prepend("<li>New Item prepended from script</li>");
+
+
+      
+a    });
+    $("#remove").click(function(){
+      $("#list li:first").remove();
+    });
+    $("#removeall").click(function(){
+      $("#list").empty();   
+    });
+ 
+
+      $("#myInput").keydown(function(){
+      let val = $("#myInput").val();
+      $("#output").text(val);
+    });
+      $("#btn").dblclick(function(){
+        $("h2").text("Button Clicked Twice!");
+        $("h3").text("Button Clicked! Twice Duplicate");
+        $(".temp").css("background-color", "orange");
+        $("p").css("font-weight", "calibri");
+      });
+      $("#btn").hover(function(){
+        $("h2").text("Button Clicked but Hovered!");
+        $("h3").text("Button  and Hovered! Duplicate");
+        $(".temp").css("background-color", "cyan");
+        $("p").css("font-weight", "italic");
+      });
+    });
+  </script>
+</body>
+
+<body>
+    <h2>Task List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskBtn">Add Task</button>
+    <button id="completeBtn" style="display:none;">Complete Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        $(document).ready(function() {
+            let pendingTask = "";
+
+            $('#addTaskBtn').click(function() {
+                var task = $('#taskInput').val().trim();
+                if (task) {
+                    pendingTask = task;
+                    $('#completeBtn').show();
+                    $('#taskInput').val('');
+                }
+            });
+
+            $('#completeBtn').click(function() {
+                if (pendingTask) {
+                    $('#taskList').append('<li>' + $('<div>').text(pendingTask).html() + '</li>');
+                    pendingTask = "";
+                    $('#completeBtn').hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

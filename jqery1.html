@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h2>Task List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $('#addTaskBtn').click(function() {
+                var task = $('#taskInput').val().trim();
+                if (task) {
+                    $('#taskList').append('<li>' + $('<div>').text(task).html() + '</li>');
+                    $('#taskInput').val('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
